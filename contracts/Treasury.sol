@@ -45,8 +45,8 @@ contract Treasury is ContractGuard {
 
     // exclusions from total supply
     address[] public excludedFromTotalSupply = [
-        address(0x29B0e3aC9B6156f42d2f7F7e3f7c19feA9f95A96), // SeedGenesisPool
-        address(0x9c1482d9a573fE9FEa0d7Cfa9B4Be6BFFDc54bd4) // SeedRewardPool
+        address(0x54cbB0e38FA2838df46C003640eADA8fe0744De8), // SeedGenesisPool
+        address(0xC99a728832a974d560fd2b1D8aa060f723BD675d) // SeedRewardPool
     ];
 
     // core components
