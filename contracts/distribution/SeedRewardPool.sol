@@ -360,6 +360,10 @@ contract SeedRewardPool {
         uint256 amount,
         address to
     ) external onlyOperator {
+        require(
+            poolStartTime > 0 && epochEndTimes[0] > 0 && epochEndTimes[1] > 0,
+            "Recover needed after start"
+        );
         if (block.timestamp < epochEndTimes[1] + 30 days) {
             // do not allow to drain token if less than 30 days after farming
             require(_token != seed, "!seed");

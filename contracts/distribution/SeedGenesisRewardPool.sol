@@ -324,6 +324,10 @@ contract SeedGenesisRewardPool {
         uint256 amount,
         address to
     ) external onlyOperator {
+        require(
+            poolStartTime > 0 && poolEndTime > 0,
+            "Recover needed after start"
+        );
         if (block.timestamp < poolEndTime + 90 days) {
             // do not allow to drain core token (SEED or lps) if less than 90 days after pool ends
             require(_token != seed, "seed");
